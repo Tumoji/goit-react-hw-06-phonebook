@@ -3,7 +3,7 @@ import { contactsReducer } from './contactsSlice';
 import { filterReducer } from './filterSlice';
 import { combineReducers } from 'redux';
 import storage from 'redux-persist/lib/storage';
-import { persistReducer } from 'redux-persist';
+import { persistReducer, persistStore } from 'redux-persist';
 
 const persistConfig = {
   key: 'root',
@@ -25,4 +25,4 @@ export const store = configureStore({
     }),
 });
 
-export default store;
+export const persistor = persistStore(store);
