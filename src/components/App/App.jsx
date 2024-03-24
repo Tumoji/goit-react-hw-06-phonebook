@@ -13,7 +13,7 @@ const App = () => {
   const filter = useSelector(state => state.filter);
 
   const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter)
+    contact.name.toLowerCase().startsWith(filter.toLowerCase())
   );
 
   const handleSubmit = newContact => {
